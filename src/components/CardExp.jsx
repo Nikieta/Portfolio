@@ -1,25 +1,3 @@
-// export function CardExp(){
-
-//     return <div className='flex justify-center items-center'>
-//     <div className="flex justify-start items-center rounded-2xl shadow-xl hover:shadow-2xl cursor-pointer h-80 w-4/5">
-// <img src="/Biofield.webp" alt="" className='h-64 w-64 rounded-xl ml-10' />
-// <div className='flex justify-center items-center h-52 w-full px-6 py-4'>
-// <div className="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light"><b><i>Frontend Developer at
-// Indian Institute of Technology,Ropar</i></b><br></br> <i>(August 2024 to Present)</i>
-// <br></br>
-// <br></br>
-// Built a responsive and dynamic web application using Next.js and Tailwind CSS, streamlining connections between farmers, industry stakeholders, and logistics providers.
-// <br></br>
-// Created reusable, intuitive UI components for a seamless and user-centric experience.
-// <br></br>
-// Transformed Figma designs into pixel-perfect, production-grade code with precision and consistency.</div>
-
-// </div>
-// </div>
-// </div>
-
-// }
-
 import React from 'react';
 
 export function CardExp() {

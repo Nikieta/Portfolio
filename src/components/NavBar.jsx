@@ -1,100 +1,3 @@
-// // import Link from "next/link"
-// // export function NavBar() {
-// //     return <>
-    
-// //         <div className="z-10 flex justify-between items-center m-10 ">
-// //             <div className="">
-
-// //             </div>
-
-
-// //             <div className="flex space-x-11">
-// //                 <h1>
-// //                     <Link href='/' className=" hover:text-blue-700">
-// //                         Home
-// //                     </Link>
-                    
-// //                 </h1>
-// //                 <h1>
-// //                     <Link href='/about' className=" hover:text-blue-700">
-// //                         About
-// //                     </Link>
-// //                 </h1>
-
-// //                 <h1>
-// //                     <Link href='/projects' className=" hover:text-blue-700">
-// //                         Project
-// //                     </Link>
-// //                 </h1>
-// //                 <h1>
-// //                     <Link href='/experience' className=" hover:text-blue-700">
-// //                        Experience
-// //                     </Link>
-// //                 </h1>
-// //                 <h1>
-// //                     <Link href='/contact' className=" hover:text-blue-700">
-// //                         Contact
-// //                     </Link>
-// //                 </h1>
-// //             </div>
-
-      
-// //             <div aria-label="Theme Switcher" className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer mr-6"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div>
-        
-       
-// //         </div>
-// //     </>
-
-// // }
-
-
-// import Link from "next/link"
-// import { motion } from "framer-motion"
-
-// export function NavBar() {
-//     const navItems = [
-//         { href: '/', label: 'Home' },
-//         { href: '/about', label: 'About' },
-//         { href: '/projects', label: 'Projects' },
-//         { href: '/experience', label: 'Experience' },
-//         { href: '/contact', label: 'Contact' },
-//     ]
-
-//     return (
-//         <motion.nav 
-//             initial={{ y: -50, opacity: 0 }}
-//             animate={{ y: 0, opacity: 1 }}
-//             transition={{ duration: 0.5 }}
-//             className="z-10 flex justify-between items-center m-10"
-//         >
-//             <div className=""></div>
-
-//             <div className="flex space-x-11">
-//                 {navItems.map((item, index) => (
-//                     <motion.div
-//                         key={item.href}
-//                         whileHover={{ scale: 1.1 }}
-//                         whileTap={{ scale: 0.95 }}
-//                     >
-//                         <Link href={item.href} className="hover:text-blue-700">
-//                             {item.label}
-//                         </Link>
-//                     </motion.div>
-//                 ))}
-//             </div>
-
-//             <motion.div 
-//                 whileHover={{ scale: 1.1 }}
-//                 whileTap={{ scale: 0.95 }}
-//                 aria-label="Theme Switcher" 
-//                 className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer mr-6"
-//             >
-//                 <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-//                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-//                 </svg>
-//             </motion.div>
-//         </motion.nav>
-//     )
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
@@ -104,7 +7,7 @@ export function NavBar() {
     const [isDarkMode, setIsDarkMode] = useState(false)
 
     useEffect(() => {
-        // Initialize dark mode state from localStorage
+       
         const savedDarkMode = localStorage.getItem('darkMode') === 'true'
         setIsDarkMode(savedDarkMode)
         if (savedDarkMode) {

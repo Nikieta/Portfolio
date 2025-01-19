@@ -1,17 +1,3 @@
-// import { Footer } from '../components/Footer'
-// import { NavBar } from '../components/NavBar'
-// import { Card } from '../components/Card'
-
-// export default function Projects(){
-//     return (
-//         <>
-//         <NavBar/>
-        
-//         <Card/>
-   
-//         <Footer/>
-//         </>
-//     )
 import { Footer } from '../components/Footer'
 import { NavBar } from '../components/NavBar'
 import { Card } from '../components/Card'

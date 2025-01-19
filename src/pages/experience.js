@@ -1,18 +1,3 @@
-// import { CardExp } from "@/components/CardExp";
-// import { NavBar } from "@/components/NavBar";
-// import {Footer } from "@/components/Footer";
-
-
-// export default function(){
-//     return (
-//         <div>
-//             <NavBar/>
-//             <CardExp/>
-//             <Footer/>
-//         </div>
-        
-      
-//     )
 import React, { useEffect } from 'react';
 import { CardExp } from "@/components/CardExp";
 import { NavBar } from "@/components/NavBar";
