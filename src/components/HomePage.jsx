@@ -53,7 +53,7 @@ export function HomePage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               download="Nikita Goswami '24.pdf"
-              href="/Nikita-Goswami-24.pdf"
+              href="/Resume.pdf"
               className="font-general-medium flex justify-center items-center w-full sm:w-48 mt-8 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-100 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-600 hover:text-white duration-500"
               aria-label="Download Resume"
             >
