@@ -16,23 +16,25 @@ export default async function handler(req, res) {
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS_Generated,   
+        pass: process.env.EMAIL_PASS,
       },
     });
 
    
     const mailOptions = {
-      from: process.env.EMAIL_USER, 
+      from: `Portfolio Contact Form <${process.env.EMAIL_USER}>`,  
       to: process.env.EMAIL_USER,  
       subject: `New Contact Form Submission: ${subject}`,
       text: `
         You have a new form submission.
-
+    
         Full Name: ${fullName}
-        Email: ${email}
+        Email: ${email}  
         Message: ${message}
       `,
+      replyTo: email, 
     };
+    
 
     try {
 

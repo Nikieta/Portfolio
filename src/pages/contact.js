@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 export default function Contact() {
   useEffect(() => {
-    // Check for dark mode preference on initial load
+
     const isDarkMode = localStorage.getItem('darkMode') === 'true'
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
