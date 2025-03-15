@@ -37,9 +37,11 @@ export default function Contact() {
       alert(`Form validation failed:\n${errorMessages}`);
       return;
     }
+  
+
 
     try {
-      const response = await fetch("http://localhost:3000/api/contact", {
+      const response = await fetch("https://nikieta.vercel.app/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
