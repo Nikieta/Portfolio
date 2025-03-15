@@ -2,17 +2,17 @@ import { CardContact } from "../components/CardContact";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { z } from "zod";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export default function Contact() {
   useEffect(() => {
-
-    const isDarkMode = localStorage.getItem('darkMode') === 'true'
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
     if (isDarkMode) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add("dark");
     }
-  }, [])
+  }, []);
 
+  // Form Validation Schema
   const formSchema = z.object({
     fullName: z.string().min(1, "Full name is required").max(100, "Full name is too long"),
     email: z.string().email("Invalid email address"),
@@ -20,6 +20,7 @@ export default function Contact() {
     message: z.string().min(1, "Message is required").max(1000, "Message is too long"),
   });
 
+  // Submit Handler
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -30,18 +31,17 @@ export default function Contact() {
       message: event.target.message.value,
     };
 
-    const validationResult = formSchema.safeParse(formData);
-
-    if (!validationResult.success) {
-      const errorMessages = validationResult.error.errors.map((err) => err.message).join("\n");
-      alert(`Form validation failed:\n${errorMessages}`);
-      return;
-    }
-  
-
+    console.log("Submitting form data:", formData);
 
     try {
-      const response = await fetch("https://nikieta.vercel.app/api/contact", {
+      const validationResult = formSchema.safeParse(formData);
+      if (!validationResult.success) {
+        const errorMessages = validationResult.error.errors.map((err) => err.message).join("\n");
+        alert(`Form validation failed:\n${errorMessages}`);
+        return;
+      }
+
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,11 +49,13 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const responseData = await response.json();
+      console.log("Response from server:", responseData);
+
       if (response.ok) {
-        const data = await response.json();
-        alert(data.message);
+        alert(responseData.message || "Form submitted successfully.");
       } else {
-        alert("Failed to submit the form.");
+        alert(`Failed to submit the form. Server error: ${responseData.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -71,4 +73,3 @@ export default function Contact() {
     </div>
   );
 }
-
