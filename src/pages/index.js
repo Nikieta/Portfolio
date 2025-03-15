@@ -3,9 +3,8 @@ import { Footer } from '../components/Footer'
 import { HomePage } from '../components/HomePage'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
-
 export default function Home() {
-  // Check for dark mode preference on initial load
+ 
   useEffect(() => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true'
     if (isDarkMode) {
