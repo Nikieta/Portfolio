@@ -11,6 +11,8 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
+  
+
   if (req.method === "POST") {
     const { fullName, email, subject, message } = req.body;
 
