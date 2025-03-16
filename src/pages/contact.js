@@ -42,13 +42,15 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api/contact";
+      console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+      
+      const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+});
+
 
       const responseData = await response.json();
       console.log("Response from server:", responseData);
