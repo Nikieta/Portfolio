@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Experience() {
   useEffect(() => {
-    // Check for dark mode preference on initial load
+    
     const isDarkMode = localStorage.getItem('darkMode') === 'true'
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
